@@ -1,2 +1,16 @@
+# Terraform and state
 .terraform/
-.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+crash.log
+
+# Ansible
+*.retry
+*.log
+__pycache__/
+
+# OS/system
+.DS_Store
+*.swp
+
