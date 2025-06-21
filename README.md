@@ -89,7 +89,8 @@ ansible-playbook playbooks/install_grafana.yml
 
 ## 📸 Screenshots
 
-> _You can add Grafana dashboard screenshots here._
+![image](https://github.com/user-attachments/assets/133aa17c-736c-4a28-b1e4-a0accc6fde62)
+
 
 ---
 
