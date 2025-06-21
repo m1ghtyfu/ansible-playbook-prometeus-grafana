@@ -1,0 +1,41 @@
+- name: Install and configure Grafana
+  hosts: grafana
+  become: true
+
+  tasks:
+    - name: Add Grafana YUM repository
+      get_url:
+        url: https://rpm.grafana.com/gpg.key
+        dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-grafana
+
+    - name: Create Grafana repo file
+      copy:
+        dest: /etc/yum.repos.d/grafana.repo
+        content: |
+          [grafana]
+          name=grafana
+          baseurl=https://rpm.grafana.com
+          repo_gpgcheck=1
+          enabled=1
+          gpgcheck=1
+          gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-grafana
+          sslverify=1
+          sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+
+    - name: Install Grafana
+      yum:
+        name: grafana
+        state: present
+
+    - name: Start and enable Grafana
+      systemd:
+        name: grafana-server
+        enabled: yes
+        state: started
+
+    - name: Start and enable Grafana
+      systemd:
+        name: grafana-server
+        enabled: yes
+        state: started
+
