@@ -11,7 +11,6 @@ This project automates the full setup of a cloud-based monitoring stack using **
 - Prometheus + Node Exporter metrics collection
 - Grafana integration for dashboards
 - Dynamic Prometheus config generation with Ansible templates
-- GitHub-ready structure
 
 ---
 
@@ -67,7 +66,7 @@ terraform apply -var="key_name=your_key" -auto-approve
 
 ---
 
-### 2️⃣ Configure with Ansible
+### 2️⃣ . Configure with Ansible
 
 ```bash
 cd ../ansible
@@ -78,7 +77,7 @@ ansible-playbook playbooks/install_grafana.yml
 
 ---
 
-### 3️⃣ Setup Grafana
+### 3️⃣ . Setup Grafana
 
 - Visit: `http://<grafana_ip>:3000`
 - Login: `admin / admin`
